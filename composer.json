@@ -1,0 +1,55 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "apirelio/flightphp",
+    "description": "Fail-safe FlightPHP middleware for Apirelio customer integration analytics.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "api-monitoring",
+        "customer-analytics",
+        "flightphp",
+        "observability"
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "apirelio/php-core": "^0.2",
+        "flightphp/core": "^3.10"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apirelio\\FlightPHP\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Apirelio\\FlightPHP\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "phpstan": "phpstan analyse --memory-limit=512M"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../php-core",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "apirelio/php-core": "0.2.0"
+                }
+            }
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

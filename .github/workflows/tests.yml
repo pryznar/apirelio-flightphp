@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ["8.2", "8.3", "8.4"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: none
+          extensions: curl, mbstring
+      - run: composer validate --strict
+      - run: composer config --unset repositories
+      - run: composer update --no-interaction --prefer-dist
+      - run: composer phpstan
+      - run: composer test

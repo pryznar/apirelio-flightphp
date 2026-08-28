@@ -1,0 +1,40 @@
+name: Integration problem
+description: Report a FlightPHP middleware, route or customer resolver problem.
+title: "[Integration]: "
+labels: [integration]
+body:
+  - type: input
+    id: flightphp-version
+    attributes:
+      label: FlightPHP version
+      placeholder: 3.19.1
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: 8.3.12
+    validations:
+      required: true
+  - type: textarea
+    id: middleware-registration
+    attributes:
+      label: Route or group middleware registration
+      description: Paste the relevant route setup without keys, credentials or customer payloads.
+      render: php
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Do not include request bodies, response bodies, credentials or personal data.
+    validations:
+      required: true
