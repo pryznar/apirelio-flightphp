@@ -21,7 +21,7 @@ use Throwable;
 
 final class ApirelioMiddleware
 {
-    public const VERSION = '0.1.0';
+    public const VERSION = '1.0.0';
 
     /** @var null|Closure(Engine<object>, array<string, mixed>): ?ApirelioCustomer */
     private ?Closure $customerResolver;
