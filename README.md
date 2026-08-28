@@ -14,7 +14,7 @@ Customer-aware API monitoring middleware for FlightPHP 3. It captures route-leve
 ## Install in 30 seconds
 
 ```bash
-composer require apirelio/flightphp:^0.1
+composer require apirelio/flightphp:^1.0
 ```
 
 ```php
